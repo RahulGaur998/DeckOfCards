@@ -10,5 +10,6 @@ public class App {
         logger.info("Welcome to Deck of Cards Program!");
         DeckOfCards deckOfCard = new DeckOfCards();
         deckOfCard.initiailzeDeck();
+        deckOfCard.shuffleDeck();
     }
 }
