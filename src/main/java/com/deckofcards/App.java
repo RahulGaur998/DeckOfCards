@@ -11,5 +11,7 @@ public class App {
         DeckOfCards deckOfCard = new DeckOfCards();
         deckOfCard.initiailzeDeck();
         deckOfCard.shuffleDeck();
+        deckOfCard.distributeToPlayers();
+        deckOfCard.printDistributedCardsToPlayers();
     }
 }

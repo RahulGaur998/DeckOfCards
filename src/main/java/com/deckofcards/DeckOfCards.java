@@ -8,6 +8,8 @@ public class DeckOfCards {
     String[] SUITS = { "CLUBS", "DIAMOND", "HEARTS", "SPADES" };
     String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
     private String[] decks = new String[52];
+    private String[][] playersCards = new String[SUITS.length][RANKS.length];
+    private int deckIndex = 0;
 
     public void initiailzeDeck() { // deck initiaization as 2CLUBS - 3CLUBS and so on % gives rank as 2,3,4,5,6,...
                                    // / gives CLUBS first till 13 then DIAMOND and so on
@@ -23,6 +25,25 @@ public class DeckOfCards {
             String temp = decks[i];
             decks[i] = decks[randomIndex];
             decks[randomIndex] = temp;
+        }
+    }
+
+    public void distributeToPlayers() {// distribute cards to players
+        for (int j = 0; j < 9; j++) {
+            for (int i = 0; i < 4; i++) {
+                playersCards[i][j] = decks[deckIndex++];
+            }
+        }
+
+    }
+
+    public void printDistributedCardsToPlayers() {// print distributed cards to players 9 cards to 4 players
+        for (int i = 0; i < 4; i++) {
+            logger.info("Player " + (i + 1) + "");
+            for (int j = 0; j < 9; j++) {
+                logger.info(playersCards[i][j] + "    ");
+            }
+            logger.info("\n");
         }
     }
 
