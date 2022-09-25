@@ -17,4 +17,13 @@ public class DeckOfCards {
         }
     }
 
+    public void shuffleDeck() {// switches position of all elements in deck using random value and temp
+        for (int i = 0; i < decks.length; i++) {
+            int randomIndex = (int) (Math.random() * decks.length);
+            String temp = decks[i];
+            decks[i] = decks[randomIndex];
+            decks[randomIndex] = temp;
+        }
+    }
+
 }
