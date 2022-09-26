@@ -13,6 +13,7 @@ public class DeckOfCards {
 
     public void initiailzeDeck() { // deck initiaization as 2CLUBS - 3CLUBS and so on % gives rank as 2,3,4,5,6,...
                                    // / gives CLUBS first till 13 then DIAMOND and so on
+        logger.info("Cards inside the deck are as follows");
         for (int i = 0; i < decks.length; i++) {
             decks[i] = RANKS[i % 13] + SUITS[i / 13];
             logger.info(decks[i]);// print each value entered in deck
@@ -28,10 +29,13 @@ public class DeckOfCards {
         }
     }
 
-    public void distributeToPlayers() {// distribute cards to players
-        for (int j = 0; j < 9; j++) {
-            for (int i = 0; i < 4; i++) {
-                playersCards[i][j] = decks[deckIndex++];
+    public void distributeToPlayers(Queue player) {// distribute cards to players
+        int count = 0;
+        for (int j = deckIndex; j < 52; j++) {
+            player.enqueue((decks[deckIndex++]));
+            count++;
+            if (count == 9) {
+                break;
             }
         }
 

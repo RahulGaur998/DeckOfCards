@@ -9,9 +9,22 @@ public class App {
     public static void main(String[] args) {
         logger.info("Welcome to Deck of Cards Program!");
         DeckOfCards deckOfCard = new DeckOfCards();
+        Queue player1 = new Queue();
+        Queue player2 = new Queue();
+        Queue player3 = new Queue();
+        Queue player4 = new Queue();
+
         deckOfCard.initiailzeDeck();
         deckOfCard.shuffleDeck();
-        deckOfCard.distributeToPlayers();
-        deckOfCard.printDistributedCardsToPlayers();
+        deckOfCard.distributeToPlayers(player1);
+        deckOfCard.distributeToPlayers(player2);
+        deckOfCard.distributeToPlayers(player3);
+        deckOfCard.distributeToPlayers(player4);
+        // deckOfCard.printDistributedCardsToPlayers();
+        player1.display();
+        player2.display();
+        player3.display();
+        player4.display();
+
     }
 }
