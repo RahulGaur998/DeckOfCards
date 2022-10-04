@@ -58,7 +58,7 @@ public class Queue {
     }
 
     void display() {
-        logger.info("Player cards are as follows:");
+        System.out.println("Player cards are as follows:");
         if (this.front == null)
             return;
         else {
