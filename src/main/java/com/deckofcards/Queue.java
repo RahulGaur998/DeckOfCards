@@ -3,12 +3,12 @@ package com.deckofcards;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-class QNode {
-    String key;
-    QNode next;
+class QNode<T> {
+    T key;
+    QNode<T> next;
 
     // constructor to create a new linked list node
-    public QNode(String decks) {
+    public QNode(T decks) {
         this.key = decks;
         this.next = null;
     }
